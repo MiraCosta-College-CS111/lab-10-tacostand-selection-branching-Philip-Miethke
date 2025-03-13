@@ -71,17 +71,25 @@ public class TacoStand
 	 */
 	public static boolean orderSupplies(double budget)
 	{
-		//tacos cost 75 cents each in supplies, keeping it simple
-	    int tacosEach = (int)(Math.round(budget / 0.75 / 4));
 
-	    TacoStand.totalFunds -= budget;
 
-	    TacoStand.numAsada += tacosEach;
-	    TacoStand.numPollo += tacosEach;
-	    TacoStand.numLengua += tacosEach;
-	    TacoStand.numUltimate += tacosEach;
+		if(budget <= totalFunds){
+			//tacos cost 75 cents each in supplies, keeping it simple
+			int tacosEach = (int)(Math.round(budget / 0.75 / 4));
 
-		return true;  //TODO: this is stubbed, replace this line with your actual code!
+			TacoStand.totalFunds -= budget;
+	
+			TacoStand.numAsada += tacosEach;
+			TacoStand.numPollo += tacosEach;
+			TacoStand.numLengua += tacosEach;
+			TacoStand.numUltimate += tacosEach;
+	
+			return true;
+
+		}
+		else{
+			return false;
+		}
 	}
 
 	/**
