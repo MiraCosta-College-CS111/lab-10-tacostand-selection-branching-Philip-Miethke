@@ -85,15 +85,10 @@ public class Main
 	 */
 	public static void printConfirmation(int numTacos){
 		
-		if(numTacos == 1){
-			System.out.println("Here you go one taco.");
-		}else {
-			System.out.printf("Here you go, %d tacos,\n", numTacos);
-		}
-
-		{
-		System.out.println("Here you go, buen provecho!");
-		System.out.println("🌮");
+		if (numTacos == 1) {
+            System.out.println("Here you go, one taco, buen provecho! 🌮");
+        } else {
+            System.out.printf("Here you go, %d tacos, buen provecho! 🌮🌮🌮\n", numTacos);
 		}
 	}
 }
