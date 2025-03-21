@@ -69,6 +69,13 @@ public class Main
 		//CALCULATION + OUTPUT SECTION
 		TacoStand.updateTotalFunds(option, numTacosOrdered);
 		Main.printConfirmation(numTacosOrdered);
+
+		if(TacoStand.areTacosAvailable(option, numTacosOrdered)){
+			TacoStand.updateTotalFunds(option, numTacosOrdered);
+			Main.printConfirmation(numTacosOrdered);
+		}else {
+			System.out.println("Sorry, we don't have enough tacos for that order. Please reduce the quantity or choose another taco.");
+		}
 	}
 
 	/**
@@ -76,9 +83,17 @@ public class Main
 	 * 
 	 * @param numTacos
 	 */
-	public static void printConfirmation(int numTacos) //TODO: upgrade per documentation
-	{
+	public static void printConfirmation(int numTacos){
+		
+		if(numTacos == 1){
+			System.out.println("Here you go one taco.");
+		}else {
+			System.out.printf("Here you go, %d tacos,\n", numTacos);
+		}
+
+		{
 		System.out.println("Here you go, buen provecho!");
 		System.out.println("🌮");
+		}
 	}
 }
